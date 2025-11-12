@@ -1,0 +1,1 @@
+export const SITE_TITLE = "THE BEST WE HAD";
