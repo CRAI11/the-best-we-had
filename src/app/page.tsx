@@ -1,9 +1,10 @@
-export default function Home() {
-  return (
-    <div>
-      <main>
+import SplashScreen from "@/components/SplashScreen";
 
-      </main>
-    </div>
+export default function Home() {
+
+  return (
+    <main style={{ width: '100%', height: '100vh' }}>
+      <SplashScreen />
+    </main>
   );
 }

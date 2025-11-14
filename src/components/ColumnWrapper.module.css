@@ -1,0 +1,59 @@
+.columnContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  overflow: hidden;
+  padding: 0 6vw;
+}
+
+.column {
+  --edge-offset: 16vw;
+
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  transform: translate3d(0, var(--direction), 0);
+  animation-name: scroll;
+  animation-duration: var(--duration);
+  animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
+  animation-fill-mode: forwards;
+}
+
+.columnContainer > .column:first-child {
+  margin-left: calc(var(--edge-offset) * -1);
+}
+
+.columnContainer > .column:last-child {
+  margin-right: calc(var(--edge-offset) * -1);
+}
+
+@keyframes scroll {
+  from {
+    transform: translate3d(0, var(--direction), 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+.imgColumn {
+  transform: translate3d(0, var(--img-direction), 0);
+  animation: slideIn;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translate3d(0, var(--img-direction), 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}

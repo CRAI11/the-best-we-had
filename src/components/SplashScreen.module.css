@@ -10,6 +10,11 @@
   align-items: center;
   z-index: 999;
   pointer-events: none;
+
+  animation-name: hideSplash;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+  animation-delay: var(--splash-total-duration, 4s);
 }
 
 .splashText {
@@ -34,13 +39,33 @@
   0% {
     transform: translateY(var(--direction));
   }
+
   30% {
     transform: translateY(0);
   }
+
   70% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(calc(var(--direction) * -1));
+  }
+}
+
+@keyframes hideSplash {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  99% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
 }

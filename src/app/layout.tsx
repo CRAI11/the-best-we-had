@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={`${bebasNeue.variable} ${inter.variable}`}>
-        <SplashScreen />
+        {/* <SplashScreen /> */}
         {children}
       </body>
     </html>
