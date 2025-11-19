@@ -1,5 +1,4 @@
 import HeroLayout from "@/components/HeroLayout";
-import InteractiveHero from "@/components/InteractiveHero";
 import SplashScreen from "@/components/SplashScreen";
 
 export default function Home() {
