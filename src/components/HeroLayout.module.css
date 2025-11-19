@@ -1,0 +1,113 @@
+.outerWrapper {
+    width: 100vh;
+    height: 100vw;
+    transform: rotate(-90deg) translateX(-100vh);
+    transform-origin: top left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    scrollbar-width: none;
+}
+
+.innerWrapper {
+    display: flex;
+    flex-direction: row;
+    transform: rotate(90deg) translateY(-100vh);
+    transform-origin: top left;
+    gap: 4vw;
+    /* padding-left: 40vw; */
+    padding-right: 20vw;
+    position: absolute;
+    top: 40%;
+    left: -28%;
+    /* perspective: 600px; */
+    /* animation: moveToPosition 2s forwards;
+    animation-delay: 1s; */
+}
+
+.imageWrapper {
+  position: relative;
+  width: 22vw;
+  height: 45vh;
+  flex-shrink: 0;
+  /* position: absolute;
+  left: var(--slide-left-distance); */
+  /* animation: fitToScreen 2s forwards;
+  animation-delay: 1s; */
+}
+
+::-webkit-scrollbar {
+  display:none;
+}
+
+.moveActive {
+  animation: moveToPosition 2s ease forwards;
+  animation-delay: 1s;
+}
+
+.fitActive {
+  animation: fitToScreen 2s ease forwards;
+  animation-delay: 1s;
+}
+
+.activeParallaxSlideIn {
+    animation: parallaxSlideIn 1s ease-in-out forwards;
+}
+
+.combined {
+  animation-name: parallaxSlideIn, fitToScreen;
+  animation-duration: 1s, 2s;
+  animation-fill-mode: forwards, forwards;
+  animation-timing-function: ease-in-out, ease;
+  animation-delay: 0s, 1s;
+}
+
+@keyframes moveToPosition {
+    from {
+        top: 40%;
+        left: -28%;
+        /* padding-left: 20vw; */
+    }
+
+    to {
+        top: 0;
+        left: 0;
+        /* padding-left: 0; */
+        width: 100vw;
+    }
+}
+
+@keyframes fitToScreen {
+    0% {
+        width: 22vw;
+        height: 45vh;
+        /* transform: translate3d(0, 0, 0); */
+        /* z-index: 1000; */
+    }
+
+    /* 90% {
+        position: absolute;
+        z-index: 1000;
+    } */
+
+    100% {
+        width: 100vw;
+        height: 100vh;
+        /* transform: translate3d(0, 0, 0); */
+        /* transform: translate3d(var(--slide-left-distance), 0, 0); */
+        /* position: absolute; */
+        /* z-index: 1000; */
+    }
+}
+
+@keyframes parallaxSlideIn {
+    0% {
+        transform: translate3d(0, 0, 0);
+        /* left: var(--slide-left-distance); */
+    }
+    100% {
+        transform: translate3d(var(--slide-left-distance), 0, 0);
+        /* left: calc(var(--slide-left-distance) * -1); */
+    }
+}
+
